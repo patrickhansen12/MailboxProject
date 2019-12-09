@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smart-mailbox-b85b7",
+  "private_key_id": "7b00f83259f5cb532560206b32b4d35d7d36518f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDyjjjw+QR4NrJ7\n/52HZzBP4IGTToEAOHTsOK5nLD1p18MkbO7NYfPP44GRuSRT3vheX98yJ3gzAeKi\nLtXSNMhKVkLTP9S0AhJS7UqOmJGZgZfS1cjqaTYFnKOelwsr3Xo/xglj7Tfk/IFA\nKsUfldqUUWoNBZrBIHaTmsTHEWoQNFUfdXm8KnD3jXc4i5tg3RsFGOifoxXRF2q7\nT5DZjOJNnvl12wlo7N28PCY5OUkqLqd+BrZlEekycF0wjv56FXsIUJlq9WXBIaMo\nF+aXDS/I8i97YMpiqH5u2XDT84W4qSFuxi8MvrXt5Yr31yCLQk+4k4sbuYrlg6mz\n2ZBsML+ZAgMBAAECggEAZlsuHEJ5aGFsoHcV+vXIpWyQQaF3PqiUbrrcnh1FLU0n\nxE9T1sfnI2tWWjBO7DXDic/bWEbfqma5RMeO483yV6xfNtZQ5EWbhfMs60/m4WiW\nsRoWVxVe/q9DPMFwrWohFJh1jf2lALSttm5WESYjv0M8BZK/44/XeiJtt7PZlkws\n6xOtFsH1gOChr9bRQOAnMqrSrQby7P+XML+A+hLrbPN6/Stv2mw1f2+PPecSPZ55\n9sOHiHSndhGKyRLdABHqGqsg4IIbb4453Zinqz17c6miqIOQuCSpMA0bFhqvT84h\nGVVhEfeBEmaECjVMMXK832I66UJtSg4+XqXZS8mTIQKBgQD8fy3fJP0aj2LFNps+\nhN6HYU6edqRgDvNoZgWpfJLnC63g5Ph63sJDZGtb2ePkntleNYa5TScVWLH4oE/g\nlja8U60/vx/LBFVezxUhzJ98xSfDptCOdwaoNF2dYd2p3ReuNY3Lr1EwhPXfoO8T\n/IvMK3FaK2RDr6Kxp8LZB4IG4wKBgQD167vdcAMWjBl9y81AbQzxN1vA8STr7akK\n/oLVk3FzmCYxOC86lXV4ipGixxjQ/OxbhpRLenFO06mAh/lzd8NmPoy7PSwPuawd\nb0b/G7DNls/qqaEbTY3UjkDG5qo1zwC+K3XnVTPhSqcJv/mKT3tcgYP+VBtO8cqs\n1qhg4nisUwKBgDrM60PR+1daGOhQZSrUCnaAhKyGeJUeJjUjvSHRLuy7XYzIBc2n\nXpoPIqlLPrUZAQndcThp7TYdZ6S8wJ1OngSRgAEeYysGIVNo6kTqwCFwUGhRyrPC\nqDw3pa1nAxXxtPgO5KyQcVnZPOENO1/uKigr3cPf4wOYPU0eAlREWVV9AoGBAOX2\nPoLfj8Ox1tSPk6u/Te7y+VX/KauFXiHtxaK6ccjKakx0YZXC1UqXKYCx9T7YhJ1B\nx8KdCP/RZhvPCzEyuQIPU8JzfZRm58/OkvFTj41wjZS+cuz5JLuzGlfksx4GKIes\nVGCyiAUQrgqr/kmb8ZubcTaOp8q2x/O/90xB+t4JAoGBAOQWod/Z4CxGAoFTKAWP\n4pgqNYQuTvyIvHCbNUL0z6G/10ULpVYYA6AgjzyRlreAKqfoMRdoECTJJjFqi73b\nUXyQEa7dr/4RersU/jLKoSp5jKHrydZ1t4goCRa9h7WSYxRtaFqjnpE//IzNuK+n\n5sP50Ks7acdS0Oss10zOuCtc\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-qu4am@smart-mailbox-b85b7.iam.gserviceaccount.com",
+  "client_id": "118330633175315934049",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-qu4am%40smart-mailbox-b85b7.iam.gserviceaccount.com"
+}
