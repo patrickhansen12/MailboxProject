@@ -3,8 +3,9 @@ const client = mqtt.connect('mqtt://broker.hivemq.com')
 var firebase = require("firebase-admin");
 var currentDate = new Date()
 var smartMailBox = require("./smartMailbox.json");
-var threshHold = 6000;
+var objectWeight = 6000;
 var desiredWeight = 5000;
+var threshHold = 5000;
 
 firebase.initializeApp({
     credential: firebase.credential.cert(smartMailBox),
@@ -18,8 +19,10 @@ client.on('connect', () => {
     client.subscribe('pubpi/close')
 
     // Inform controllers that garage is connected
-    client.publish('pubpi/connected', 'true')
-    sendStateUpdate()
+    client.publish('pubpi/connected', 'true');
+    getGrams();
+    getValue();
+    sendStateUpdate();
 })
 
 client.on('message', (topic, message) => {
@@ -178,4 +181,19 @@ function checkDate() {
     console.log(year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
 
 
+}
+function getGrams(value) {
+    value = 12;
+    var temp = value + (31/27);
+    var temp = temp / (44/135);
+console.log(temp)
+    return temp;
+}
+
+function getValue(grams) {
+    grams = 100;
+    var temp = (grams*44)/135;
+    var temp = temp - (31/27);
+console.log(temp)
+    return temp;
 }
