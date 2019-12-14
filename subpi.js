@@ -98,7 +98,7 @@ function SetTime() {
         startDate = formattedDate;
         console.log(startDate);
         console.log(splitDate)
-        console.log(minutesS)
+            console.log(minutesS)
         console.log(hourS)
         console.log('open door')
         openGarageDoor()
