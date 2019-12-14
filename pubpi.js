@@ -3,7 +3,8 @@ const client = mqtt.connect('mqtt://broker.hivemq.com')
 var firebase = require("firebase-admin");
 var currentDate = new Date()
 var smartMailBox = require("./smartMailbox.json");
-
+var threshHold = 6000;
+var desiredWeight = 5000;
 
 firebase.initializeApp({
     credential: firebase.credential.cert(smartMailBox),
@@ -34,6 +35,7 @@ client.on('message', (topic, message) => {
 function sendStateUpdate () {
     console.log('sending state %s', state)
     client.publish('pubpi/state', state)
+    checkDate();
     //firebaseGetDataOnce();
     //firebaseGetData();
     //firebaseCreateData();
@@ -115,7 +117,7 @@ ref.on("value", function(snapshot) {
     console.log(snapshot.val());
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
-})};
+})}
 
 //overrides past pi1 and pi2 easy solutions datetime in name or check if pi1 or pi2 is already on firebase,
 function firebaseCreateData(){
@@ -123,14 +125,57 @@ function firebaseCreateData(){
     var ref =  db.ref("raspberryPies");
     var usersRef = ref.child("history");
     usersRef.set({
-    Pi1: {
-        joke: "Took you long enough sir",
-        message: "A message from MailboxPi was received " + currentDate
+        Pi1: {
+            joke: "Took you long enough sir",
+            message: "A message from MailboxPi was received " + currentDate
 
-    },
-    Pi2: {
-        joke: "This is not a joke but it is funny",
-        message: "You received mail " + currentDate
+        },
+        Pi2: {
+            joke: "This is not a joke but it is funny",
+            message: "You received mail " + currentDate
+        }
+
+    })}
+
+function checkDate() {
+     var today =  currentDate.getDate();
+        var yesterday = currentDate.getDate() - 1;
+    console.log(today + " is the date of today")
+        console.log(yesterday + " is the current date -1")
+
+    if(today == yesterday || yesterday == today - 1 && threshHold > desiredWeight ) {
+        console.log("seems like the value has been updated in the last 2 days")
     }
+    let date_ob = new Date();
 
-})};
+// current date
+// adjust 0 before single digit date
+    let date = ("0" + date_ob.getDate()).slice(-2);
+    console.log(date);
+
+// current month
+    let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+// current year
+    let year = date_ob.getFullYear();
+
+// current hours
+    let hours = date_ob.getHours();
+
+// current minutes
+    let minutes = date_ob.getMinutes();
+
+// current seconds
+    let seconds = date_ob.getSeconds();
+
+    // prints date in DD-MM-Year format
+    console.log(date + "-" + month + "-" + year);
+
+// prints date in YYYY-MM-DD format
+    console.log(year + "-" + month + "-" + date);
+
+// prints date & time in YYYY-MM-DD HH:MM:SS format
+    console.log(year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
+
+
+}
