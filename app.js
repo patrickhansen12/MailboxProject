@@ -2,22 +2,35 @@ var firebase = require("firebase-admin");
 var currentDate = new Date()
 var smartMailBox = require("./smartMailbox.json");
 
+
 firebase.initializeApp({
     credential: firebase.credential.cert(smartMailBox),
     databaseURL: "https://smart-mailbox-b85b7.firebaseio.com/"
+
 });
 //gets the data from the firebase raspberryPies path once
 var db = firebase.database();
 var ref = db.ref("history");
 ref.once("value", function(snapshot) {
     console.log(snapshot.val());
+    db.ref("history")
+        .orderByKey() // order by chlidren's keys
+        .limitToLast(1) // only get the last child
+        .once("child_added", function(snapshot) {
+            var key = snapshot.key;
+            var val = snapshot.val();
+            console.log(val + "some random text")
+            console.log(key + "some random texrtas")
+        });
 });
 var db = firebase.database();
 var ref =  db.ref("raspberryPies");
 //gets all the data from the history path on firebase
-var usersRef = ref.child("history   ");
+var usersRef = ref.child("history");
 // Attach an asynchronous callback to read the data at our posts reference
 ref.on("value", function(snapshot) {
+    var result = ref.push();
+        //console.log(result);
     console.log(snapshot.val());
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);

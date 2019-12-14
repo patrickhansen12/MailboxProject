@@ -4,7 +4,7 @@ var firebase = require("firebase-admin");
 var currentDate = new Date()
 var smartMailBox = require("./smartMailbox.json");
 var objectWeight = 6000;
-var desiredWeight = 5000;
+var desiredWeight = 50;
 var threshHold = 5000;
 
 firebase.initializeApp({
@@ -36,10 +36,10 @@ client.on('message', (topic, message) => {
 })
 
 function sendStateUpdate () {
-    console.log('sending state %s', state)
+    //console.log('sending state %s', state)
     client.publish('pubpi/state', state)
-    checkDate();
-    //firebaseGetDataOnce();
+    //checkDate();
+    firebaseGetDataOnce();
     //firebaseGetData();
     //firebaseCreateData();
 }
@@ -105,10 +105,23 @@ process.on('uncaughtException', handleAppExit.bind(null, {
 function firebaseGetDataOnce() {
     var db = firebase.database();
     var ref = db.ref("history");
-    ref.once("value", function(snapshot) {
+    var adaRef = firebase.database().ref("history/1572874339/weight");
+
+   // var usersRef = ref.child("1572874539");
+    //console.log(adaRef)
+     adaRef.once("value", function(snapshot) {
         console.log(snapshot.val());
+         if(snapshot.val() > desiredWeight){
+             console.log("the weight was " + snapshot.val() + " and the desired weight was " + desiredWeight)
+         }
+         if(snapshot.val() < desiredWeight){
+             console.log("the weight was " + snapshot.val() + " and the desired weight was " + desiredWeight)
+         }
     });
+
+
 }
+
 
 function firebaseGetData(){
 var db = firebase.database();
@@ -127,8 +140,9 @@ function firebaseCreateData(){
     var db = firebase.database();
     var ref =  db.ref("raspberryPies");
     var usersRef = ref.child("history");
+   var test = "Pi1" + currentDate;
     usersRef.set({
-        Pi1: {
+        test: {
             joke: "Took you long enough sir",
             message: "A message from MailboxPi was received " + currentDate
 
