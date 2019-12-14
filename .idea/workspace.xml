@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60e87dda-e9a3-4b80-9ffd-3f55cde61ef7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/wws/client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubpi.js" beforeDir="false" afterPath="$PROJECT_DIR$/pubpi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subpi.js" beforeDir="false" afterPath="$PROJECT_DIR$/subpi.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +14,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="package.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -29,11 +28,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mussi\WebstormProjects\mqtt-mailbox-project" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mussi\WebstormProjects\mqtt-mailbox-project\node_modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mussi\OneDrive\Dokumenter\GitHub\MailboxProject" />
+      <recent name="C:\Users\mussi\WebstormProjects\mqtt-mailbox-project" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -48,7 +48,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.pubpi.js">
+  <component name="RunManager" selected="Node.js.client.js">
+    <configuration name="MQTT client.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/MQTT client.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="client.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/wws/client.js" working-dir="$PROJECT_DIR$/wws">
+      <method v="2" />
+    </configuration>
     <configuration name="pubpi.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/pubpi.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -57,6 +63,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.client.js" />
+        <item itemvalue="Node.js.MQTT client.js" />
         <item itemvalue="Node.js.pubpi.js" />
         <item itemvalue="Node.js.subpi.js" />
       </list>
