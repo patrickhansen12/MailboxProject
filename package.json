@@ -1,0 +1,8 @@
+{
+  "name": "MailboxProject",
+  "version": "1.0.0",
+  "dependencies": {
+    "firebase-admin": "latest",
+    "mqtt": "latest"
+  }
+}
