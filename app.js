@@ -1,19 +1,16 @@
-var firebase = require("firebase-admin");
-var currentDate = new Date()
-var smartMailBox = require("./smartMailbox.json");
-var objectWeight = 0;
-var desiredWeight = 50;
-var threshHold = 500;
-var mqtt = require('mqtt')
+const firebase = require("firebase-admin");
+const smartMailBox = require("./smartMailbox.json");
+const mqtt = require('mqtt')
+
+let threshHold = 500;
 
 firebase.initializeApp({
     credential: firebase.credential.cert(smartMailBox),
     databaseURL: "https://smart-mailbox-b85b7.firebaseio.com/"
 });
 
-var db = firebase.database();
-let thresholdRef = db.ref("settings/weight");
-var adaRef = firebase.database().ref("history/1572874339/weight");
+const db = firebase.database();
+const thresholdRef = db.ref("settings/weight");
 
 console.log("Subscribe to threashold value from firebase");
 thresholdRef.on("value", function(snapshot) {
@@ -22,10 +19,10 @@ thresholdRef.on("value", function(snapshot) {
     console.log("Threashold set at " + threshHold);
 });
 
-var clientId = 'reactjs';
-var host = 'wss://mqtt.flespi.io';
+const clientId = 'reactjs';
+const host = 'wss://mqtt.flespi.io';
 
-var options = {
+const options = {
     keepalive: 10,
     clientId: clientId,
     protocolId: 'MQTT',
@@ -64,14 +61,9 @@ client.on('message', function (topic, message, packet) {
     checkWithFirebase(message);
 });
 
-//gets the data from the firebase raspberryPies path once
-
-
 function getGrams(value) {
-    value = objectWeight;
     let temp = value + (31/27);
     temp = temp / (44/135);
-    objectWeight = temp;
     console.log("converted value " + value + " into grams: "+ temp);
     return temp;
 }
