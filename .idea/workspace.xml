@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="60e87dda-e9a3-4b80-9ffd-3f55cde61ef7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subpi.js" beforeDir="false" afterPath="$PROJECT_DIR$/subpi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MQTT client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wws/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/wws/client.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.client.js">
+  <component name="RunManager" selected="Node.js.app.js">
     <configuration name="MQTT client.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/MQTT client.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -66,10 +68,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.client.js" />
         <item itemvalue="Node.js.app.js" />
-        <item itemvalue="Node.js.MQTT client.js" />
+        <item itemvalue="Node.js.client.js" />
         <item itemvalue="Node.js.pubpi.js" />
+        <item itemvalue="Node.js.MQTT client.js" />
         <item itemvalue="Node.js.subpi.js" />
       </list>
     </recent_temporary>
@@ -79,13 +81,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="17090e20-119c-448f-877f-f39d695387fa" name="Default Changelist" comment="" />
+      <changelist id="60e87dda-e9a3-4b80-9ffd-3f55cde61ef7" name="Default Changelist" comment="" />
       <created>1575504030485</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575504030485</updated>
       <workItem from="1575504032878" duration="5489000" />
       <workItem from="1576283966031" duration="2657000" />
+      <workItem from="1576403202249" duration="2216000" />
     </task>
     <servers />
   </component>

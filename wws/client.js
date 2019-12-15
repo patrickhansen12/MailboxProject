@@ -1,8 +1,7 @@
-'use strict'
 
 var mqtt = require('mqtt')
 
-var clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
+var clientId = 'mqttjs_'
 
 var host = 'wss://mqtt.flespi.io'
 
@@ -36,7 +35,7 @@ client.on('connect', function () {
     console.log('client connected:' + clientId)
 })
 
-client.subscribe('Sensor/weight', { qos: 0 })
+client.subscribe('Sensor/weight', { qos: 1 })
 
 client.publish('Sensor/weight', 'wss secure connection demo...!', { qos: 0, retain: false })
 
