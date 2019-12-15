@@ -11,8 +11,9 @@ firebase.initializeApp({
 
 const db = firebase.database();
 const thresholdRef = db.ref("settings/weight");
+const historyRef  =db.ref("history");
 
-console.log("Subscribe to threashold value from firebase");
+console.log("Subscribe to threshold value from firebase");
 thresholdRef.on("value", function(snapshot) {
     let thresholdInGrams = snapshot.val();
     threshHold = getValue(thresholdInGrams);
@@ -95,5 +96,13 @@ function checkWithFirebase(message) {
         client.publish("notification/mail", "false");
     }
 
-    // TODO: Add to Firebase History database
+    let weightInGrams = getGrams(value);
+    let data = {
+        date: Date.now(),
+        deviceid: 1,
+        userid: "n88tvME1RffEYlvluaZBaH3fEwA2",
+        weight: weightInGrams
+    };
+
+    historyRef.push().set(data);
 }
