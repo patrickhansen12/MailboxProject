@@ -55,6 +55,9 @@ var options = {
     rejectUnauthorized: false
 }
     function connectToMqtt() {
+        var clientId = 'mqttjs_'
+
+        var host = 'wss://mqtt.flespi.io'
 
         var client = mqtt.connect(host, options)
 
@@ -70,11 +73,11 @@ var options = {
         client.subscribe('sensor/weight', {qos: 0})
 
         client.publish('sensor/weight', 'wss secure connection demo...!', {qos: 0, retain: false})
-       checkWithFirebase()
         client.on('message', function (topic, message, packet) {
-            console.log('Received Message:= ' + message.toString() + '\nOn topic:= ' + topic)})
-}
-    function checkWithFirebase() {
+            console.log('Received Message:= ' + message.toString() + '\nOn topic:= ' + topic)        });
+        checkWithFirebase(message)
+
+    function checkWithFirebase(message) {
 
 
             if (objectWeight < message) {
@@ -109,7 +112,7 @@ var options = {
 
             }
 
-        })
+        }
 
         client.on('close', function () {
             console.log(clientId + ' disconnected')
