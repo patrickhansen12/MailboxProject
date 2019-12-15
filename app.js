@@ -97,8 +97,9 @@ function checkWithFirebase(message) {
     }
 
     let weightInGrams = getGrams(value);
+    let EpocInMS = Date.now();
     let data = {
-        date: Date.now(),
+        date: (EpocInMS/1000),
         deviceid: 1,
         userid: "n88tvME1RffEYlvluaZBaH3fEwA2",
         weight: weightInGrams
