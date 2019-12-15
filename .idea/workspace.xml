@@ -4,9 +4,7 @@
     <list default="true" id="60e87dda-e9a3-4b80-9ffd-3f55cde61ef7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wws/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/wws/client.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,30 +22,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UXXhGzIe7jpFC9lgojNqxmxTPz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mussi\WebstormProjects\mqtt-mailbox-project\node_modules" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mussi\OneDrive\Dokumenter\GitHub\MailboxProject" />
       <recent name="C:\Users\mussi\WebstormProjects\mqtt-mailbox-project" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mussi\WebstormProjects\mqtt-mailbox-project\node_modules" />
+    </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
     <configuration name="MQTT client.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/MQTT client.js" working-dir="$PROJECT_DIR$">
@@ -75,6 +74,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -87,7 +98,7 @@
       <updated>1575504030485</updated>
       <workItem from="1575504032878" duration="5489000" />
       <workItem from="1576283966031" duration="2657000" />
-      <workItem from="1576403202249" duration="3989000" />
+      <workItem from="1576403202249" duration="7554000" />
     </task>
     <servers />
   </component>
@@ -106,5 +117,27 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="617" y="243" width="524" height="515" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576414608016">
+      <screen x="50" y="27" width="1662" height="936" />
+    </state>
+    <state x="617" y="243" width="524" height="515" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/50.27.1662.936@50.27.1662.936" timestamp="1576414608016" />
+    <state width="1639" height="237" key="GridCell.Tab.0.bottom" timestamp="1576416330120">
+      <screen x="50" y="27" width="1662" height="936" />
+    </state>
+    <state width="1639" height="237" key="GridCell.Tab.0.bottom/50.27.1662.936@50.27.1662.936" timestamp="1576416330120" />
+    <state width="1639" height="237" key="GridCell.Tab.0.center" timestamp="1576416330119">
+      <screen x="50" y="27" width="1662" height="936" />
+    </state>
+    <state width="1639" height="237" key="GridCell.Tab.0.center/50.27.1662.936@50.27.1662.936" timestamp="1576416330119" />
+    <state width="1639" height="237" key="GridCell.Tab.0.left" timestamp="1576416330118">
+      <screen x="50" y="27" width="1662" height="936" />
+    </state>
+    <state width="1639" height="237" key="GridCell.Tab.0.left/50.27.1662.936@50.27.1662.936" timestamp="1576416330118" />
+    <state width="1639" height="237" key="GridCell.Tab.0.right" timestamp="1576416330119">
+      <screen x="50" y="27" width="1662" height="936" />
+    </state>
+    <state width="1639" height="237" key="GridCell.Tab.0.right/50.27.1662.936@50.27.1662.936" timestamp="1576416330119" />
   </component>
 </project>
