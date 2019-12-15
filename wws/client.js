@@ -41,6 +41,7 @@ client.publish('sensor/weight', 'wss secure connection demo...!', { qos: 0, reta
 
 client.on('message', function (topic, message, packet) {
     console.log('Received Message:= ' + message.toString() + '\nOn topic:= ' + topic)
+
 })
 
 client.on('close', function () {

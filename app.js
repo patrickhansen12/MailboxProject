@@ -1,14 +1,11 @@
 var firebase = require("firebase-admin");
 var currentDate = new Date()
 var smartMailBox = require("./smartMailbox.json");
-var objectWeight = 6000;
+var objectWeight = 0;
 var desiredWeight = 50;
-var threshHold = 5000;
+var threshHold = 500;
 var mqtt = require('mqtt')
 
-var clientId = 'mqttjs_'
-
-var host = 'wss://mqtt.flespi.io'
 
 
 firebase.initializeApp({
@@ -17,55 +14,22 @@ firebase.initializeApp({
 
 
 });
+connectToMqtt();
+
 //gets the data from the firebase raspberryPies path once
-var db = firebase.database();
-var ref = db.ref("history");
-var adaRef = firebase.database().ref("history/1572874339/weight");
 
-adaRef.once("value", function(snapshot) {
-    console.log(snapshot.val());
-    if(snapshot.val() > desiredWeight){
-        console.log("the weight was " + snapshot.val() + " and the desired weight was " + desiredWeight)
-    }
-    if(snapshot.val() < desiredWeight){
-        console.log("the weight was " + snapshot.val() + " and the desired weight was " + desiredWeight)
-    }
-});
-var db = firebase.database();
-var ref =  db.ref("raspberryPies");
-//gets all the data from the history path on firebase
-var usersRef = ref.child("history");
-// Attach an asynchronous callback to read the data at our posts reference
-ref.on("value", function(snapshot) {
-    var result = ref.push();
-        //console.log(result);
-    console.log(snapshot.val());
-}, function (errorObject) {
-    console.log("The read failed: " + errorObject.code);
-});
 
-//overrides past pi1 and pi2 easy solutions datetime in name or check if pi1 or pi2 is already on firebase,
-usersRef.set({
-    Pi1: {
-        joke: "Took you long enough sir",
-        message: "A message from MailboxPi was received " + currentDate
-    },
-    Pi2: {
-        joke: "This is not a joke but it is funny",
-        message: "You received mail " + currentDate
-    }
-
-});
 function getGrams(value) {
-    value = 12;
+    value = objectWeight;
     var temp = value + (31/27);
     var temp = temp / (44/135);
+    objectWeight = temp;
     console.log(temp)
     return temp;
 }
 
 function getValue(grams) {
-    grams = 100;
+    grams = objectWeight;
     var temp = (grams*44)/135;
     var temp = temp - (31/27);
     console.log(temp)
@@ -90,26 +54,64 @@ var options = {
     password: '',
     rejectUnauthorized: false
 }
+    function connectToMqtt() {
 
-var client = mqtt.connect(host, options)
+        var client = mqtt.connect(host, options)
 
-client.on('error', function (err) {
-    console.log(err)
-    client.end()
-})
+        client.on('error', function (err) {
+            console.log(err)
+            client.end()
+        })
 
-client.on('connect', function () {
-    console.log('client connected:' + clientId)
-})
+        client.on('connect', function () {
+            console.log('client connected:' + clientId)
+        })
 
-client.subscribe('sensor/weight', { qos: 0 })
+        client.subscribe('sensor/weight', {qos: 0})
 
-client.publish('sensor/weight', 'wss secure connection demo...!', { qos: 0, retain: false })
+        client.publish('sensor/weight', 'wss secure connection demo...!', {qos: 0, retain: false})
+       checkWithFirebase()
+        client.on('message', function (topic, message, packet) {
+            console.log('Received Message:= ' + message.toString() + '\nOn topic:= ' + topic)})
+}
+    function checkWithFirebase() {
 
-client.on('message', function (topic, message, packet) {
-    console.log('Received Message:= ' + message.toString() + '\nOn topic:= ' + topic)
-})
 
-client.on('close', function () {
-    console.log(clientId + ' disconnected')
-})
+            if (objectWeight < message) {
+                objectWeight = message;
+                console.log(objectWeight + " had the value of and " + message)
+
+                var db = firebase.database();
+                var ref = db.ref("history");
+                var adaRef = firebase.database().ref("history/1572874339/weight");
+
+                adaRef.once("value", function (snapshot) {
+                    console.log(snapshot.val());
+                    if (snapshot.val() > objectWeight) {
+                        console.log("the weight was " + snapshot.val() + " and the desired weight was " + objectWeight)
+                        getGrams();
+
+                        adaRef.set({
+                            weight: {
+                                objectWeight
+
+                            }
+
+                        })
+                    }
+                    if (snapshot.val() < desiredWeight) {
+                        console.log("the weight was " + snapshot.val() + " and the desired weight was " + desiredWeight)
+                    }
+                });
+
+            } else {
+                console.log("objectweight was less than message" + message + " the object was" + objectWeight)
+
+            }
+
+        })
+
+        client.on('close', function () {
+            console.log(clientId + ' disconnected')
+        })
+    }
