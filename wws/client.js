@@ -35,9 +35,9 @@ client.on('connect', function () {
     console.log('client connected:' + clientId)
 })
 
-client.subscribe('Sensor/weight', { qos: 1 })
+client.subscribe('sensor/weight', { qos: 0 })
 
-client.publish('Sensor/weight', 'wss secure connection demo...!', { qos: 0, retain: false })
+client.publish('sensor/weight', 'wss secure connection demo...!', { qos: 0, retain: false })
 
 client.on('message', function (topic, message, packet) {
     console.log('Received Message:= ' + message.toString() + '\nOn topic:= ' + topic)

@@ -4,11 +4,17 @@ var smartMailBox = require("./smartMailbox.json");
 var objectWeight = 6000;
 var desiredWeight = 50;
 var threshHold = 5000;
+var mqtt = require('mqtt')
+
+var clientId = 'mqttjs_'
+
+var host = 'wss://mqtt.flespi.io'
 
 
 firebase.initializeApp({
     credential: firebase.credential.cert(smartMailBox),
     databaseURL: "https://smart-mailbox-b85b7.firebaseio.com/"
+
 
 });
 //gets the data from the firebase raspberryPies path once
@@ -65,3 +71,45 @@ function getValue(grams) {
     console.log(temp)
     return temp;
 }
+
+var options = {
+    keepalive: 10,
+    clientId: clientId,
+    protocolId: 'MQTT',
+    protocolVersion: 4,
+    clean: true,
+    reconnectPeriod: 1000,
+    connectTimeout: 30 * 1000,
+    will: {
+        topic: 'WillMsg',
+        payload: 'Connection Closed abnormally..!',
+        qos: 0,
+        retain: false
+    },
+    username: 'FlespiToken 2v2QwADAMIqKjO3q9NLBcs5ZB9wfJ1kzmadGAH5adlLm0CBXecogsj5RgqXPf5dp',
+    password: '',
+    rejectUnauthorized: false
+}
+
+var client = mqtt.connect(host, options)
+
+client.on('error', function (err) {
+    console.log(err)
+    client.end()
+})
+
+client.on('connect', function () {
+    console.log('client connected:' + clientId)
+})
+
+client.subscribe('sensor/weight', { qos: 0 })
+
+client.publish('sensor/weight', 'wss secure connection demo...!', { qos: 0, retain: false })
+
+client.on('message', function (topic, message, packet) {
+    console.log('Received Message:= ' + message.toString() + '\nOn topic:= ' + topic)
+})
+
+client.on('close', function () {
+    console.log(clientId + ' disconnected')
+})

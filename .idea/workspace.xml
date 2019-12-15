@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="60e87dda-e9a3-4b80-9ffd-3f55cde61ef7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQTT client.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wws/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/wws/client.js" afterDir="false" />
     </list>
@@ -88,7 +87,7 @@
       <updated>1575504030485</updated>
       <workItem from="1575504032878" duration="5489000" />
       <workItem from="1576283966031" duration="2657000" />
-      <workItem from="1576403202249" duration="2216000" />
+      <workItem from="1576403202249" duration="3989000" />
     </task>
     <servers />
   </component>
